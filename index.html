@@ -46,7 +46,7 @@
 
   <div class="hero-foot r d1">
     <p class="hero-sub">
-      Design that holds up in production. Built by someone who understands both sides of the handoff.
+      I design it and then I build it. Nothing exposes a bad design decision faster than having to write the code for it.
     </p>
     <div class="hero-btns">
       <button class="btn btn-primary"
@@ -97,8 +97,15 @@
           </ul>
         </div>
         <div class="drow">
+          <h4>A Path I Rejected</h4>
+          <ul>
+            <li>The first version used a single output panel with a toggle that swapped content in place. I abandoned it after noticing the two modes need fundamentally different amounts of space — "Explain it" requires breathing room for analogies to land; "Just the facts" works precisely because it's dense. A shared panel made each mode a compromise. The split layout was more work to build, but it was the only honest solution.</li>
+          </ul>
+        </div>
+        <div class="drow">
           <h4>What I'd Improve</h4>
           <ul>
+            <li>The line-level highlighting — the feature I was most confident about — works cleanly with short functions. With anything over 60–70 lines, highlighted regions start to overlap and the connection between insight and code becomes harder to follow, not easier. I haven't solved this yet.</li>
             <li>The "Explain it" copy was written by assumption — I'd validate it with real non-coders through usability testing</li>
             <li>No onboarding moment — a first-time user has no signal for what to paste or what to expect</li>
             <li>The empty state communicates format but not value — it should answer "why would I use this?" before asking for input</li>
@@ -124,6 +131,7 @@
         <div class="cs-card-body">
           <span class="cs-card-tags">Mobile · Banking · UX Research</span>
           <h3 class="cs-card-title">Mobile Banking Experience Redesign</h3>
+          <p class="cs-hook">Eurobank's most-used actions were buried three taps deep. I mapped every abandoned flow before drawing a single screen.</p>
           <a href="https://medium.com/@thnthr/redesigning-eurobank-mobile-app-a-calmer-faster-banking-experience-ui-ux-case-study-67df9548a5f6"
              target="_blank" class="cs-cta">Read Case Study →</a>
         </div>
@@ -137,6 +145,7 @@
         <div class="cs-card-body">
           <span class="cs-card-tags">Mobile · Entertainment · UX Research</span>
           <h3 class="cs-card-title">Cinema Discovery Redesign</h3>
+          <p class="cs-hook">Athinorama had all the right data. Getting to it required more steps than finding the cinema itself.</p>
           <a href="https://medium.com/@thnthr/redesigning-athinorama-cinema-mobile-app-a-modern-clearer-cinema-discovery-experience-for-athens-eb8cb2a03e31"
              target="_blank" class="cs-cta">Read Case Study →</a>
         </div>
@@ -167,7 +176,7 @@
       <div class="approach-col r d2">
         <span class="approach-num">03</span>
         <h3>Break it before<br>someone else does</h3>
-        <p>I test rough prototypes early and deliberately look for failure points. Catching breaks before the build is the cheapest iteration you'll ever do.</p>
+        <p>I test rough prototypes early, specifically looking for the moment a user stops reading and starts guessing. That moment almost always appears earlier in the flow than expected — and it's usually a structural problem, not a visual one.</p>
       </div>
 
     </div>
@@ -181,11 +190,12 @@
 
     <div class="about-grid r">
       <p class="about-text">
-        I design products that are <strong>clear to use and practical to build.</strong>
-        My focus is reducing complexity — turning cluttered flows into interfaces
-        that feel obvious in hindsight. I work across design and front-end,
-        which means I think about constraints early and hand off work that
-        doesn't fall apart in development.
+        My first instinct with any flow is to find where it starts
+        <strong>asking too much of the person using it.</strong>
+        Not "how do we make this look better" — "why does this step exist at all."
+        I design in Figma and build in code, which means the handoff is my problem
+        from the start. Most of what I ship looks simpler than the first version.
+        That's usually the point.
       </p>
 
       <div class="about-aside">

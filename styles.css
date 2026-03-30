@@ -205,7 +205,7 @@ img { display: block; }
 }
 
 .cs-card {
-  background: var(--white);
+  background: var(--bg);
   border-radius: 16px; overflow: hidden;
 }
 

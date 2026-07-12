@@ -173,7 +173,7 @@ img { display: block; }
 .feat-desc {
   font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.72; margin-bottom: 32px;
 }
-.feat-pills { display: flex; gap: 10px; }
+.feat-pills { display: flex; gap: 10px; flex-wrap: wrap; }
 .feat-pill {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 9px 18px; border-radius: 999px; border: 1px solid var(--rule);
@@ -202,6 +202,12 @@ img { display: block; }
 /* ─── CASE STUDIES ─── */
 .cs-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+}
+
+/* Single remaining case study: avoid a dangling empty column */
+.cs-grid-single {
+  grid-template-columns: 1fr;
+  max-width: 560px;
 }
 
 .cs-card {
@@ -340,6 +346,7 @@ footer { border-top: 1px solid var(--rule); padding: 64px 52px 52px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-foot { flex-direction: column; align-items: flex-start; }
   .cs-grid { grid-template-columns: 1fr; }
+  .cs-grid-single { max-width: none; }
   .approach-grid { grid-template-columns: 1fr; }
   .approach-col {
     padding: 28px 0;

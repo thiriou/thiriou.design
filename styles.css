@@ -178,7 +178,10 @@ img { display: block; }
   background: var(--bg); border: 1px solid var(--rule);
   padding: 5px 13px; border-radius: 999px;
 }
-.feat-body { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; }
+.feat-body { display: grid; grid-template-columns: 4fr 5fr; gap: 80px; align-items: start; }
+.feat-body > .r:first-child {
+  position: sticky; top: 100px;
+}
 .feat-title {
   font-family: var(--font-display);
   font-size: clamp(34px, 4vw, 50px); font-weight: 400;
@@ -360,6 +363,7 @@ footer { border-top: 1px solid var(--rule); padding: 64px 52px 52px; }
   .wrap { padding: 0 24px; }
   .section { padding: 72px 0; }
   .feat-body { grid-template-columns: 1fr; gap: 40px; }
+  .feat-body > .r:first-child { position: static; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-foot { flex-direction: column; align-items: flex-start; }
   .cs-grid { grid-template-columns: 1fr; }

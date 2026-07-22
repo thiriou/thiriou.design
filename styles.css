@@ -88,8 +88,6 @@ img { display: block; }
   color: var(--accent); letter-spacing: -0.05em;
 }
 
-.hero-rule { height: 1px; background: var(--rule); margin-bottom: 28px; }
-
 .hero-foot {
   display: flex; align-items: center;
   justify-content: space-between; gap: 40px; flex-wrap: wrap;

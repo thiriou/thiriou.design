@@ -146,6 +146,14 @@ img { display: block; }
 }
 .feat-visual:has(.feat-visual-img)::before { display: none; }
 .feat-visual:has(.feat-visual-img) { background: var(--bg); border: none; }
+.feat-visual-plain {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+.feat-visual-plain::before { display: none !important; }
 .feat-visual-inner {
   position: relative; z-index: 1; height: 100%;
   display: flex; flex-direction: column;

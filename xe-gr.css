@@ -1,0 +1,259 @@
+/* ─── xe.gr CASE STUDY — page-specific additions ───
+   Extends styles.css tokens only. Nothing here redefines nav, footer,
+   buttons, .section, .wrap, .eyebrow, .feat-*, .cs-* — those are reused
+   as-is from the main stylesheet. This file adds the handful of
+   components this case study needs that don't exist elsewhere on the
+   site: the project hero, audit item list, moodboard yes/no list,
+   type/color specimen blocks, and the route-system diagrams. */
+
+:root {
+  /* xe.gr's own brand palette — used only within the case-study content
+     (diagrams, swatches, tag accents) that is literally presenting
+     that palette. Site chrome (nav, footer, links) stays on --accent. */
+  --xe-yellow:   #FFB301;
+  --xe-charcoal: #22222A;
+  --xe-warm:     #F8F4F1;
+  --xe-grey:     #DAD9D7;
+  --xe-strength: #3A8F5C;
+  --xe-weakness: #C2701E;
+}
+
+/* ─── BACK LINK ─── */
+.proj-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  margin-bottom: var(--sp-4);
+  transition: color var(--dur-base) var(--ease), gap var(--dur-base) var(--ease);
+}
+.proj-back:hover { color: var(--ink); gap: 10px; }
+
+/* ─── PROJECT HERO ─── */
+.proj-hero {
+  padding: 132px var(--sp-7) 0;
+  max-width: 1040px; margin: 0 auto;
+}
+.proj-hero-meta {
+  font-size: 12px; font-weight: 500; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: var(--sp-3);
+}
+.proj-hero-title {
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 600; line-height: 1.1; letter-spacing: -.02em;
+  margin-bottom: var(--sp-3); max-width: 16ch;
+}
+.proj-hero-title em {
+  font-style: italic; font-weight: 400; color: var(--accent);
+}
+.proj-hero-sub {
+  font-size: 19px; font-weight: 400; color: var(--muted);
+  line-height: 1.6; max-width: 46ch; margin-bottom: var(--sp-7);
+}
+
+/* ─── SECTION LEDE (headline + intro body used to open each numbered section) ─── */
+.sec-headline {
+  font-size: clamp(26px, 3vw, 36px); font-weight: 600;
+  line-height: 1.25; letter-spacing: -.015em;
+  margin-bottom: var(--sp-4); max-width: 22ch;
+}
+.sec-body {
+  font-size: 16px; font-weight: 400; color: var(--muted);
+  line-height: 1.7; max-width: 62ch; margin-bottom: var(--sp-3);
+}
+.sec-body:last-of-type { margin-bottom: 0; }
+.sec-body strong { color: var(--ink); font-weight: 500; }
+.sec-body em { color: var(--ink); font-style: italic; }
+.sec-lede { margin-bottom: var(--sp-8); }
+
+/* ─── AUDIT LIST (strengths / weaknesses / proposals) ─── */
+.audit-group { margin-bottom: var(--sp-8); }
+.audit-group:last-child { margin-bottom: 0; }
+.audit-group-label {
+  font-size: 12px; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); opacity: .6;
+  margin-bottom: var(--sp-4);
+}
+.audit-list { display: flex; flex-direction: column; }
+.audit-item {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: var(--sp-3); padding: var(--sp-4) 0; border-top: 1px solid var(--rule);
+}
+.audit-list .audit-item:last-child { border-bottom: 1px solid var(--rule); }
+.audit-num {
+  font-size: 13px; font-weight: 500; color: var(--muted); opacity: .4;
+  padding-top: 2px;
+}
+.audit-tag {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: var(--radius-full);
+  margin-bottom: var(--sp-2);
+}
+.audit-tag.is-strength { color: var(--xe-strength); background: rgba(58,143,92,.1); }
+.audit-tag.is-weakness { color: var(--xe-weakness); background: rgba(194,112,30,.1); }
+.audit-tag.is-proposal { color: var(--accent); background: rgba(59,91,219,.09); }
+.audit-title {
+  font-size: 18px; font-weight: 600; letter-spacing: -.01em;
+  margin-bottom: 6px; color: var(--ink);
+}
+.audit-desc {
+  font-size: 15px; font-weight: 400; color: var(--muted);
+  line-height: 1.65; max-width: 58ch; margin-bottom: 8px;
+}
+.audit-insight {
+  font-size: 14px; font-weight: 400; font-style: italic;
+  color: rgba(17,19,24,.55); line-height: 1.6; max-width: 56ch;
+}
+
+/* ─── PULL LINE (closing statements, PDF-style short stacked lines) ─── */
+.pull-lines {
+  font-size: clamp(19px, 2.1vw, 24px); font-weight: 400;
+  line-height: 1.55; letter-spacing: -.01em; color: var(--ink);
+  max-width: 34ch; margin: var(--sp-8) 0;
+}
+.pull-lines em { font-style: italic; color: var(--muted); }
+.pull-lines strong { font-weight: 600; }
+
+/* ─── VISUAL BLOCK (full-bleed-feeling image, generous whitespace) ─── */
+.visual-block { margin: var(--sp-8) 0; }
+.visual-block img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-lg); border: 1px solid var(--rule);
+}
+.visual-caption {
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  margin-top: var(--sp-2); text-align: center;
+}
+.visual-block.is-wide { margin-left: calc(var(--sp-7) * -1); margin-right: calc(var(--sp-7) * -1); }
+.visual-block.is-wide img { border-radius: var(--radius-lg); }
+
+/* ─── COVER PHONE (page-opening reveal) ─── */
+.cover-phone-block {
+  display: flex; justify-content: center; padding: var(--sp-4) 0 var(--sp-3);
+}
+.cover-phone-block img {
+  width: 100%; max-width: 460px; height: auto; display: block;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+}
+
+/* ─── PHOTO GRID (2x2 moodboard photography) ───
+   Shared aspect-ratio across the grid and the pair row below keeps every
+   photo the same size regardless of its native crop. */
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.photo-grid img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+  aspect-ratio: 4 / 5; border-radius: var(--radius-lg);
+}
+
+/* ─── PHOTO PAIR ROW ─── */
+.photo-pair-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3);
+  margin: var(--sp-8) auto; max-width: 490px;
+}
+.photo-pair-row img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+  aspect-ratio: 4 / 5; border-radius: var(--radius-lg);
+}
+
+/* ─── DIAGRAM GRID (routes / nodes system) ─── */
+.diagram-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6); margin: var(--sp-6) 0 var(--sp-8);
+}
+.diagram-cell {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: var(--sp-3); padding: var(--sp-5);
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+}
+.diagram-cell svg { width: 100%; height: auto; max-height: 90px; }
+.diagram-label {
+  font-size: 14px; font-weight: 500; color: var(--ink);
+}
+
+/* ─── MOODBOARD YES/NO ─── */
+.yn-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4); margin: var(--sp-4) 0 var(--sp-8); max-width: 480px;
+}
+.yn-card {
+  padding: var(--sp-4); border-radius: var(--radius-lg);
+  border: 1px solid var(--rule);
+}
+.yn-card.is-no { background: rgba(194,112,30,.06); }
+.yn-card.is-yes { background: rgba(58,143,92,.07); }
+.yn-title {
+  font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+.yn-card.is-no .yn-title { color: var(--xe-weakness); }
+.yn-card.is-yes .yn-title { color: var(--xe-strength); }
+.yn-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.yn-card li {
+  font-size: 14px; color: rgba(17,19,24,.7); line-height: 1.5;
+  padding-left: 14px; position: relative;
+}
+.yn-card li::before {
+  content: ''; position: absolute; left: 0; top: .6em;
+  width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .5;
+}
+
+/* ─── TYPE + COLOR SPECIMENS ─── */
+.specimen-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4); margin: var(--sp-4) 0 var(--sp-7);
+}
+.specimen-card {
+  padding: var(--sp-5); background: var(--white);
+  border: 1px solid var(--rule); border-radius: var(--radius-lg);
+}
+.specimen-label {
+  font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); opacity: .6; margin-bottom: var(--sp-2);
+}
+.specimen-headline-font { font-size: 30px; font-weight: 700; letter-spacing: -.01em; margin-bottom: var(--sp-2); }
+.specimen-body-font { font-size: 16px; font-weight: 400; margin-bottom: var(--sp-2); }
+.specimen-note { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+.palette-row { display: flex; gap: var(--sp-3); margin: var(--sp-4) 0 var(--sp-3); flex-wrap: wrap; }
+.swatch { width: 92px; }
+.swatch-fill {
+  width: 92px; height: 92px; border-radius: var(--radius-lg);
+  border: 1px solid var(--rule); margin-bottom: 8px;
+}
+.swatch-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+.swatch-hex { font-size: 11px; color: var(--muted); font-family: monospace; }
+
+/* ─── TWO-COL SECTION (text / visual side by side, desktop only) ─── */
+.split-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-7);
+  align-items: start; margin-bottom: var(--sp-8);
+}
+
+/* ─── OUTCOME ─── */
+.outcome-block {
+  padding: var(--sp-9) 0 var(--sp-6);
+  text-align: left;
+}
+.outcome-text {
+  font-size: clamp(22px, 2.6vw, 30px); font-weight: 400;
+  line-height: 1.5; letter-spacing: -.015em; color: var(--ink);
+  max-width: 34ch;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .proj-hero { padding: 108px var(--sp-3) 0; }
+  .diagram-grid { grid-template-columns: 1fr; }
+  .yn-grid { grid-template-columns: 1fr; max-width: none; }
+  .specimen-row { grid-template-columns: 1fr; }
+  .split-row { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .visual-block.is-wide { margin-left: calc(var(--sp-3) * -1); margin-right: calc(var(--sp-3) * -1); }
+  .audit-item { grid-template-columns: 20px 1fr; gap: var(--sp-2); }
+}
+
+@media (max-width: 580px) {
+  .proj-hero-title { max-width: none; }
+  .sec-headline { max-width: none; }
+  .cover-phone-block img { max-width: 280px; }
+  .photo-grid, .photo-pair-row { grid-template-columns: 1fr; }
+}

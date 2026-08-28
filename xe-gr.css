@@ -124,7 +124,7 @@
   margin-top: var(--sp-2); text-align: center;
 }
 .visual-block.is-wide { margin-left: calc(var(--sp-7) * -1); margin-right: calc(var(--sp-7) * -1); }
-.visual-block.is-wide img { border-radius: var(--radius-lg); }
+.visual-block.is-wide img { border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
 /* ─── COVER PHONE (page-opening reveal) ─── */
 .cover-phone-block {
@@ -254,6 +254,6 @@
 @media (max-width: 580px) {
   .proj-hero-title { max-width: none; }
   .sec-headline { max-width: none; }
-  .cover-phone-block img { max-width: 280px; }
+  .cover-phone-block img { max-width: 380px; }
   .photo-grid, .photo-pair-row { grid-template-columns: 1fr; }
 }

@@ -126,6 +126,11 @@
 .visual-block.is-wide { margin-left: calc(var(--sp-7) * -1); margin-right: calc(var(--sp-7) * -1); }
 .visual-block.is-wide img { border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
+/* Poster block — tall full-page campaign reveal, shown as a contained
+   "poster" rather than full-bleed, so a 5:1 page capture stays intentional. */
+.poster-block { display: flex; justify-content: center; }
+.poster-block img { max-width: 440px; box-shadow: var(--shadow-md); border: none; }
+
 /* ─── COVER PHONE (page-opening reveal) ─── */
 .cover-phone-block {
   display: flex; justify-content: center; padding: var(--sp-4) 0 var(--sp-3);
@@ -238,6 +243,35 @@
   font-size: clamp(22px, 2.6vw, 30px); font-weight: 400;
   line-height: 1.5; letter-spacing: -.015em; color: var(--ink);
   max-width: 34ch;
+}
+
+/* ─── ROUTE MARK (section-transition echo of the route/node system) ───
+   Pure CSS, zero markup changes: targets the 3rd, 5th, 7th and 8th
+   <section> in document order (03 Visual System / 05 Application /
+   07 Beyond the Profile / 08 Outcome) — the narrative turns where the
+   system is introduced, applied, applied further, and concluded.
+   Replaces the plain --rule border-top on just those sections with the
+   same yellow line-and-node vocabulary shown in the §03 diagrams, so
+   the system reads as applied, not only shown. */
+section.section:nth-of-type(3),
+section.section:nth-of-type(5),
+section.section:nth-of-type(7),
+section.section:nth-of-type(8) {
+  position: relative; border-top-color: transparent;
+}
+section.section:nth-of-type(3)::before,
+section.section:nth-of-type(5)::before,
+section.section:nth-of-type(7)::before,
+section.section:nth-of-type(8)::before {
+  content: ''; position: absolute; top: -1px; left: 0;
+  width: 56px; height: 2px; background: var(--xe-yellow);
+}
+section.section:nth-of-type(3)::after,
+section.section:nth-of-type(5)::after,
+section.section:nth-of-type(7)::after,
+section.section:nth-of-type(8)::after {
+  content: ''; position: absolute; top: -4px; left: 48px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--xe-yellow);
 }
 
 /* ─── RESPONSIVE ─── */
